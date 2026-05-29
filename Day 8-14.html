@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 8-14</title>
+
+  <style>
+     
+   body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+   }
+
+   h1 {
+      text-align: center;
+      padding: 20px;
+   }
+
+   nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background-color: navy;
+    padding: 12px;
+   }
+
+   nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+   }
+
+   .page-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: lightyellow;
+      padding: 40px;
+      gap: 8px;
+   }
+
+   .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 200px);
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+   }
+
+   .gallery-item {
+      height: 100%;
+      width: 100%;
+      background-color: lightgray;
+      border-radius: 8px;
+      overflow: hidden;
+   }
+
+   .gallery-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+   }
+
+   .gallery-item p {
+      padding: 8px 12px;
+      margin: 0;
+      font-size: 14px;
+   }
+
+   .wide {
+      grid-column: span 2;
+   }
+
+   .tall {
+    grid-row: span 2;
+   }
+
+   .gallery-item {
+      position: relative;
+   }
+
+   .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.55);
+      color: white;
+      padding: 8px 12px;
+      font-size: 13px;
+      opacity: 0;
+  }
+
+   .gallery-item:hover .caption {
+     opacity: 1;
+  }
+
+   .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: navy;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      z-index: 100;
+   }
+
+   @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .wide {
+      grid-column: span 1;
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 12px;
+    }
+   }
+
+   @media (min-width: 601px) and (max-width:899px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+   }
+
+   @media (min-width: 900px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+   }
+
+  </style>
+</head> 
+<body>
+
+    <div id="top"></div>
+
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="https://www.google.com/">Google</a>
+    </nav>
+
+    <div class="page-header">
+      <h1>My Gallery</h1>
+    </div>
+
+    <section class="gallery">
+      <div class="gallery-item wide">
+        <img src="images\Chinchin1.jpg" alt="Photo1">
+        <div class="caption">Chinchin</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images\Chinchin.jpg" alt="Photo2">
+        <div class="caption">Chinchin</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images\tropapitz.jpg" alt="Photo3">
+        <div class="caption">College bffs</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images\my-tutor.jpg" alt="Photo4">
+        <div class="caption">My tutor</div>
+      </div>
+
+      <div class="gallery-item tall">
+        <img src="images\family.jpg" alt="Photo5">
+        <div class="caption">My family</div>
+      </div>
+
+      <div class="gallery-item wide">
+        <img src="images\Aurora Borealis.jpg" alt="Photo6">
+        <div class="caption">My dream destination: Aurora Borealis</div>
+      </div>
+
+    </section>
+
+    <a href="#top" class="back-to-top">↑ Top</a>
+
+    <br>
+
+    <footer style="text-align: center; padding: 24px; color: gray;">
+    <h3>Made by:</h3>
+    <p>Angela Lei S. Bulugagao</p>
+    </footer>
+
+</body>
+</html>
